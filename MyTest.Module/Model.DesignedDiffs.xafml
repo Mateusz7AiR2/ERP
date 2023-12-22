@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="MyTest">
+  <NavigationItems NavigationStyle="Accordion" DefaultParentImageName="" DefaultLeafImageName="">
+    <Items>
+      <Item Id="CRM" ImageName="" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Person" ViewId="Person_ListView" ImageName="" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.1.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Person_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="Person" RelativeSize="100">
+            <LayoutGroup Id="Person_col1" RelativeSize="33.278955954323">
+              <LayoutItem Id="FullName" RelativeSize="20.05420054200542" />
+              <LayoutItem Id="FirstName" RelativeSize="3.5230352303523036" />
+              <LayoutItem Id="MiddleName" RelativeSize="25.338753387533874" />
+              <LayoutItem Id="LastName" RelativeSize="3.5230352303523036" />
+              <LayoutItem Id="DisplayName" RelativeSize="47.5609756097561" />
+            </LayoutGroup>
+            <LayoutGroup Id="Person_col2" RelativeSize="37.35725938009788">
+              <LayoutGroup Id="Auto26827193-c872-4a46-a4fb-07ecadd0e290" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="4.607046070460704" IsNewNode="True">
+                <LayoutItem Id="Gender" ViewItem="Gender" Index="0" RelativeSize="62.44541484716157" IsNewNode="True" />
+                <LayoutItem Id="Email" Index="1" RelativeSize="37.55458515283843" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Email" Index="0" RelativeSize="24.796747967479675" Removed="True" />
+              <LayoutGroup Id="Auto9252446d-827a-4ab9-8c68-1039df7c0c66" ShowCaption="False" Caption="Auto9252446d-827a-4ab9-8c68-1039df7c0c66(11)" Direction="Horizontal" Index="1" RelativeSize="5.149051490514905" IsNewNode="True">
+                <LayoutItem Id="Birthday" Index="0" RelativeSize="37.55458515283843" IsNewNode="True" />
+                <LayoutItem Id="Oid" ViewItem="Oid" Index="1" RelativeSize="62.44541484716157" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Image" ViewItem="Image" Index="2" RelativeSize="3.5230352303523036" IsNewNode="True" />
+              <LayoutItem Id="Address1" Index="3" RelativeSize="63.143631436314365" />
+              <LayoutItem Id="Address2" Index="4" RelativeSize="23.577235772357724" />
+              <LayoutItem Id="Birthday" Removed="True" />
+            </LayoutGroup>
+            <LayoutItem Id="Photo" RelativeSize="29.363784665579118" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
