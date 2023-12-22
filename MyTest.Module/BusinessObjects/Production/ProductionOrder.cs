@@ -14,5 +14,7 @@ namespace MyTest.Module.BusinessObjects.Production
             : base(session)
         {
         }
+
+       
     }
 }

@@ -94,6 +94,28 @@ namespace MyTest.Module.BusinessObjects.CRM
                 }
             }
         }
+
+        private string _DefaultEmail;
+        [ImmediatePostData]
+        public string DefaultEmail
+        {
+            get
+            {
+                return _DefaultEmail;
+            }
+            set
+            {
+                if (value != null && !base.IsLoading && !base.IsSaving && !base.IsDeleted)
+                {
+                    value = value.Trim();
+                }
+
+                SetPropertyValue("DefaultEmail", ref _DefaultEmail, value);
+            }
+        }
+
+
+
     }
 }
 
