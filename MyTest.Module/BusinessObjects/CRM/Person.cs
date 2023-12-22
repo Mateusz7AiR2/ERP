@@ -14,27 +14,21 @@ using System.ComponentModel;
 using System.Text.RegularExpressions;
 using MyTest.Module.BusinessObjects.Enum;
 using MyTest.Module.BusinessObjects.Core;
+using DevExpress.CodeParser;
 
 namespace MyTest.Module.BusinessObjects.CRM
 {
     public class Person : BaseClass
     {
-     //   public Person() : base() { }
         public Person(Session session)
             : base(session)
         {
         }
-        //[Key]
-        //public int Oid
-        //{
-        //    get { return GetPropertyValue<int>("Oid"); }
-        //    set { SetPropertyValue("Oid", value); }
-        //}
 
         private string _FirstName;
-        [Size(30)] // rozmiar
-        [RuleRequiredField("Imie","Pole Imie nie może być puste.")] // nie może być pusta
-        [ImmediatePostData] // od razu zapisuje do bazy bez wciśkania ok/ zapisz
+        [Size(30)] 
+        [RuleRequiredField("Imie","Pole Imie nie może być puste.")] 
+        [ImmediatePostData]
         public string FirstName
         {
             get
@@ -63,6 +57,24 @@ namespace MyTest.Module.BusinessObjects.CRM
             }
         }
 
+        private string _phoneNumber;
+        [Size(10)]
+        public string PhoneNumber
+        {
+            get
+            {
+                return _phoneNumber;
+            }
+            set
+            {
+                if (!base.IsLoading)
+                {
+                    value = value?.Trim();
+                }
+
+                SetPropertyValue("Number", ref _phoneNumber, value);
+            }
+        }
         private EmployeeRole employeeRole;
         public EmployeeRole EmployeeRole
         {
@@ -80,29 +92,6 @@ namespace MyTest.Module.BusinessObjects.CRM
                 {
                     OnChanged("Image"); // Wywołaj zmianę, aby zaktualizować wyświetlane zdjęcie
                 }
-            }
-        }
-
-
-        private string _Address;
-
-        public static Type TargetType { get; set; }
-
-        [Size(254)]
-        public string Address
-        {
-            get
-            {
-                return _Address;
-            }
-            set
-            {
-                if (!base.IsLoading)
-                {
-                    value = value?.Trim();
-                }
-
-                SetPropertyValue("Address", ref _Address, value);
             }
         }
     }

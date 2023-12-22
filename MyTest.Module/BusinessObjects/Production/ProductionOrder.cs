@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyTest.Module.BusinessObjects.Production
 {
-    internal class ProductionOrder : BaseClass
+    public class ProductionOrder : BaseClass
     {
         public ProductionOrder(Session session)
             : base(session)
