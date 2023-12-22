@@ -30,7 +30,7 @@ namespace MyTest.Module.BusinessObjects.Core
         public bool IsPersistent => GetType().CustomAttributes.ToList().FirstOrDefault((CustomAttributeData x) => x.AttributeType == typeof(NonPersistentAttribute)) == null;
 
         [VisibleInDetailView(false)]
-        public string ObjectCode => GetSystemCode();
+        public string ObjectCode => GetSystemCode();//
 
         public override void AfterConstruction()
         {
