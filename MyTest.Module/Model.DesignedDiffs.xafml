@@ -4,7 +4,13 @@
     <Items>
       <Item Id="CRM" ImageName="" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="Person" ViewId="Person_ListView" ImageName="" IsNewNode="True" />
+          <Item Id="Entity" ViewId="Entity_ListView" IsNewNode="True" />
+          <Item Id="Perosn" ViewId="Person_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Production" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="ProductionOrder" ViewId="ProductionOrder_ListView" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -13,7 +19,7 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="23.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="Person_DetailView">

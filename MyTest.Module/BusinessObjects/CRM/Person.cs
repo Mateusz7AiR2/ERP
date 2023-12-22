@@ -72,7 +72,7 @@ namespace MyTest.Module.BusinessObjects.CRM
                     value = value?.Trim();
                 }
 
-                SetPropertyValue("Number", ref _phoneNumber, value);
+                SetPropertyValue("NumberPhone", ref _phoneNumber, value);
             }
         }
         private EmployeeRole employeeRole;
@@ -110,7 +110,7 @@ namespace MyTest.Module.BusinessObjects.CRM
                     value = value.Trim();
                 }
 
-                SetPropertyValue("DefaultEmail", ref _DefaultEmail, value);
+                SetPropertyValue("DefaultEmailPerson", ref _DefaultEmail, value);
             }
         }
 
