@@ -1,13 +1,16 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using MyTest.Module.BusinessObjects.Core;
+using MyTest.Module.BusinessObjects.CRM;
 using MyTest.Module.BusinessObjects.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Person = MyTest.Module.BusinessObjects.CRM.Person;
 
 namespace MyTest.Module.BusinessObjects.Production
 {
@@ -17,23 +20,45 @@ namespace MyTest.Module.BusinessObjects.Production
             : base(session)
         {
         }
+        private Entity _entity;
+        public Entity Entity
+        {
+            get { return _entity; }
+            set { SetPropertyValue(nameof(ProjectManager), ref _entity, value); }
+        }
 
         private Person _projectManager;
+        [DataSourceProperty(nameof(AvailableDesigners))]
         public Person ProjectManager
         {
             get { return _projectManager; }
             set { SetPropertyValue(nameof(ProjectManager), ref _projectManager, value); }
         }
-        public XPCollection<Person> GetPersonsWithEmployeeRoleDesigner()
+        public IList<Person> AvailableDesigners => GetAvailableDesigners();
+        private IList<Person> GetAvailableDesigners()
         {
-            CriteriaOperator criteria = new BinaryOperator("EmployeeRole", EmployeeRole.Designer);
-            XPCollection<Person> persons = new XPCollection<Person>(Session, criteria);
-            return persons;
+            return new XPCollection<Person>(base.Session).Where(x => x.EmployeeRole == EmployeeRole.Designer).ToList();
         }
-        public void SetProjectManagerWithEmployeeRoleDesigner()
+
+        private Priority _priority;
+        public Priority Priority
         {
-            XPCollection<Person> designers = GetPersonsWithEmployeeRoleDesigner();
-            ProjectManager = designers.FirstOrDefault();
+            get { return _priority; }
+            set { SetPropertyValue(nameof(Priority), ref _priority, value); }
+        }
+
+        private DateTime _plannedFinishDate;
+        public DateTime PlannedFinishDate
+        {
+            get { return _plannedFinishDate;}
+            set { SetPropertyValue(nameof(PlannedFinishDate), ref _plannedFinishDate, value);}
+        }
+
+        private ProductionState _productionState;
+        public ProductionState ProductionState
+        {
+            get { return _productionState; }
+            set { SetPropertyValue(nameof(_productionState), ref _productionState, value); }
         }
     }
 }

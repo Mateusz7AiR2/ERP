@@ -4,8 +4,23 @@
     <Items>
       <Item Id="CRM" ImageName="" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="Entity" ViewId="Entity_ListView" IsNewNode="True" />
+          <Item Id="Entity" ViewId="Entity_ListView" ImageName="BO_Unknow" IsNewNode="True" />
           <Item Id="Perosn" ViewId="Person_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Enum" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="SteelType" ViewId="SteelCategory_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Product" ViewId="" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Product" ViewId="Product_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Product Category" ViewId="" Caption="Product Category" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Product Category" ViewId="ProductCategory_ListView" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="Production" IsNewNode="True">
@@ -22,6 +37,37 @@
     <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <DetailView Id="Entity_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Entity" RelativeSize="30.76923076923077">
+              <LayoutGroup Id="Entity_col1" RelativeSize="49.88610478359909">
+                <LayoutItem Id="LongName" RelativeSize="20.454545454545453" />
+                <LayoutItem Id="ShortName" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="VATIN" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="DefaultEmail" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="PhoneNumber" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="Oid" ViewItem="Oid" Index="5" RelativeSize="20.454545454545453" IsNewNode="True" />
+                <LayoutItem Id="Street" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Entity_col2" RelativeSize="50.11389521640091">
+                <LayoutItem Id="Street" ViewItem="Street" Index="0" RelativeSize="20.454545454545453" IsNewNode="True" />
+                <LayoutItem Id="StreetNumber" Index="1" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="Locality" Index="2" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="CountryRegion" Index="3" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="Country" Index="4" RelativeSize="14.772727272727273" />
+                <LayoutItem Id="EntityRole" Index="5" RelativeSize="20.454545454545453" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Index="1" RelativeSize="69.23076923076923" Caption="Oid">
+              <LayoutItem Id="Item1" Index="0" RelativeSize="100" IsNewNode="True" />
+              <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="Person_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
