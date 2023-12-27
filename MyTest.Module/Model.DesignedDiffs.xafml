@@ -144,5 +144,10 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="ProductionTask_ProductionTaskItems_ListView" AllowEdit="True" AllowLink="False" AllowUnlink="False">
+      <Columns>
+        <ColumnInfo Id="Index" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>
