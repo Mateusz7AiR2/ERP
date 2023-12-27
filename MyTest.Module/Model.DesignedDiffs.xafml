@@ -1,5 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="MyTest">
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.EmployeeRole">
+        <LocalizationItem Name="Boss" Value="Szef" />
+        <LocalizationItem Name="Designer" Value="Konstruktor" />
+        <LocalizationItem Name="Electrician" Value="Elektryk" />
+        <LocalizationItem Name="Fitter" Value="Monter" />
+        <LocalizationItem Name="Foreman" Value="Brygadzista" />
+        <LocalizationItem Name="Locksmith" Value="Ślusarz" />
+        <LocalizationItem Name="Manager" Value="Kierownik" />
+        <LocalizationItem Name="Painter" Value="Malarz" />
+        <LocalizationItem Name="PlasmaWorker" Value="Pracownik na CNC" />
+        <LocalizationItem Name="Pressman" Value="Pracownik na prasie hydraulicznej" />
+        <LocalizationItem Name="Sandblaster" Value="Śruciarz" />
+        <LocalizationItem Name="Turner" Value="Tokarz" />
+        <LocalizationItem Name="Warehouseman" Value="Magazynier" />
+        <LocalizationItem Name="Welder" Value="Spawacz" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.EntityRole">
+        <LocalizationItem Name="Client" Value="Klient" />
+        <LocalizationItem Name="ExternalService" Value="Usługa zewnętrzna" />
+        <LocalizationItem Name="Supplier" Value="Dostawca" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.Gender">
+        <LocalizationItem Name="Female" Value="Kobieta" />
+        <LocalizationItem Name="Male" Value="Mężczyzna" />
+        <LocalizationItem Name="Unknown" Value="Nieznany" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.Priority">
+        <LocalizationItem Name="Hight" Value="Wysoki" />
+        <LocalizationItem Name="Low" Value="Niski" />
+        <LocalizationItem Name="Mediun" Value="Średni" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.ProductionState">
+        <LocalizationItem Name="forProduction" Value="Na produkcję" />
+        <LocalizationItem Name="orderSent" Value="Zamówienie wysłane" />
+        <LocalizationItem Name="waitningForTransport" Value="Oczekuje na transport" />
+        <LocalizationItem Name="workingVersion" Value="Wersja robocza" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.SteelType">
+        <LocalizationItem Name="acidResistantPlate" Value="Blacha kwasowa" />
+        <LocalizationItem Name="blackPlate" Value="Blacha czarna" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
   <NavigationItems NavigationStyle="Accordion" DefaultParentImageName="" DefaultLeafImageName="">
     <Items>
       <Item Id="CRM" ImageName="" IsNewNode="True">
