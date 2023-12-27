@@ -19,6 +19,7 @@ public class Updater : ModuleUpdater {
     public override void UpdateDatabaseAfterUpdateSchema() {
         base.UpdateDatabaseAfterUpdateSchema();
         InitializeProductCategories();
+        InitializeProductionTaskKind();
 
 
         ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
