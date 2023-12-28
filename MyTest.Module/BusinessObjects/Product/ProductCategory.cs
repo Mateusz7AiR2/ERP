@@ -1,5 +1,6 @@
 ﻿using DevExpress.Xpo;
 using MyTest.Module.BusinessObjects.Core;
+using MyTest.Module.BusinessObjects.Production;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,27 +15,15 @@ namespace MyTest.Module.BusinessObjects.Product
         : base(session)
         {
         }
-        private string _productCategoryName;
+        string _ProductCategoryName;
         public string ProductCategoryName
         {
-            get
-            {
-                return _productCategoryName;
-            }
-            set
-            {
-                SetPropertyValue("ProductsCategoryName", ref _productCategoryName, value);
-            }
+            get => _ProductCategoryName;
+            set => SetPropertyValue(nameof(ProductCategoryName), ref _ProductCategoryName, value);
         }
 
-        [Association("ProductCategory-Elements")]
-        public XPCollection<Elements> Elements
-        {
-            get
-            {
-                return GetCollection<Elements>(nameof(Elements));
-            }
-        }
+        [Association]
+        public XPCollection<ProductionTaskItem> ChronologyItems => GetCollection<ProductionTaskItem>(nameof(ChronologyItems));
 
 
     }

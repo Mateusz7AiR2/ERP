@@ -71,11 +71,6 @@
     <Items>
       <Item Id="Product" Caption="Wyroby">
         <Items>
-          <Item Id="Kategoria wyrobu">
-            <Items>
-              <Item Id="Product Category" Caption="Kategoria " />
-            </Items>
-          </Item>
           <Item Id="Product" Caption="Wyrób" />
         </Items>
       </Item>
@@ -120,16 +115,14 @@
     </DetailView>
     <DetailView Id="ProductCategory_DetailView">
       <Layout>
+        <TabbedGroup Id="Item2">
+          <LayoutGroup Id="Item1" Caption="Kategoria wyrobu">
+            <LayoutGroup Id="Auto1b72bb53-192e-4101-95af-332ff91ac417" Caption="Auto1b72bb53-192e-4101-95af-332ff91ac417(4)" />
+            <LayoutGroup Id="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a" Caption="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a(7)" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item4" Caption="Chronologia produkcji" />
+        </TabbedGroup>
         <LayoutGroup Id="Main">
-          <TabbedGroup Id="Item2">
-            <LayoutGroup Id="Item1" Caption="Kategoria wyrobu">
-              <LayoutGroup Id="Auto1b72bb53-192e-4101-95af-332ff91ac417" Caption="Auto1b72bb53-192e-4101-95af-332ff91ac417(4)" />
-              <LayoutGroup Id="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a" Caption="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a(7)" />
-            </LayoutGroup>
-            <LayoutGroup Id="Item3" Caption="Elementy maszyny">
-              <LayoutGroup Id="Elements_Group" Caption="Elements" />
-            </LayoutGroup>
-          </TabbedGroup>
           <LayoutGroup Id="SimpleEditors">
             <LayoutGroup Id="SteelCategory" Caption="Rodzaj materiału" />
             <LayoutGroup Id="XPObject" Caption="Oid" />
@@ -154,6 +147,17 @@
             <LayoutGroup Id="XPObject" Caption="Oid" />
           </LayoutGroup>
         </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProductionTask_DetailView">
+      <Layout>
+        <TabbedGroup Id="Item3">
+          <LayoutGroup Id="Item2" Caption="Zadanie produkcyjne">
+            <LayoutGroup Id="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8" Caption="" />
+            <LayoutGroup Id="Item4" Caption="Pozycje" />
+          </LayoutGroup>
+        </TabbedGroup>
+        <LayoutGroup Id="Main" Caption="Main" />
       </Layout>
     </DetailView>
     <DetailView Id="SteelCategory_DetailView">

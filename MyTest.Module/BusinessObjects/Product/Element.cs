@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MyTest.Module.BusinessObjects.Product
 {
-    public class Elements : BaseClass
+    public class Element : BaseClass
     {
-        public Elements(Session session)
+        public Element(Session session)
         : base(session)
         {
         }
@@ -29,15 +29,12 @@ namespace MyTest.Module.BusinessObjects.Product
             }
         }
 
-        private ProductCategory _productCategory;
-        [Association("ProductCategory-Elements")]
-        public ProductCategory ProductCategory
+        ProductionTaskItem _ProductionTaskItem;
+        [Association]
+        public ProductionTaskItem ProductionTaskItem
         {
-            get { return _productCategory; }
-            set
-            {
-                SetPropertyValue(nameof(ProductCategory), ref _productCategory, value);
-            }
+            get => _ProductionTaskItem;
+            set => SetPropertyValue(nameof(ProductionTaskItem), ref _ProductionTaskItem, value);
         }
     }
 

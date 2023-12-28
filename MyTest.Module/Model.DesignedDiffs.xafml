@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="MyTest">
   <BOModel>
+    <Class Name="MyTest.Module.BusinessObjects.Product.ProductCategory" ImageName="" />
     <Class Name="MyTest.Module.BusinessObjects.Product.SteelCategory">
       <OwnMembers>
         <Member Name="SteelsCategory" DataSourcePropertyIsNullMode="SelectAll" />
@@ -62,12 +63,8 @@
       </Item>
       <Item Id="Product" ViewId="" Index="20" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="Kategoria wyrobu" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="Product Category" ViewId="ProductCategory_ListView" IsNewNode="True" />
-            </Items>
-          </Item>
-          <Item Id="Product" ViewId="Product_ListView" IsNewNode="True" />
+          <Item Id="Product" ViewId="Product_ListView" Index="10" IsNewNode="True" />
+          <Item Id="Kategoria wyrobu" ViewId="ProductCategory_ListView" Index="20" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="Production" Index="30" IsNewNode="True">
@@ -85,7 +82,6 @@
     <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
-    <ListView Id="Elements_ListView" AllowEdit="False" />
     <DetailView Id="Entity_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -220,30 +216,36 @@
         <ColumnInfo Id="Linework" Index="3" />
       </Columns>
     </ListView>
+    <ListView Id="ProductCategory_ChronologyItems_ListView" MasterDetailMode="ListViewAndDetailView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="ProductionTask" Index="-1" />
+        <ColumnInfo Id="Progres" Index="2" />
+      </Columns>
+    </ListView>
     <DetailView Id="ProductCategory_DetailView">
       <Items>
         <PropertyEditor Id="SteelsCategory" AllowEdit="False" />
       </Items>
       <Layout>
-        <LayoutGroup Id="Main" RelativeSize="100">
-          <TabbedGroup Id="Item2" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
-            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
-              <LayoutGroup Id="Auto1b72bb53-192e-4101-95af-332ff91ac417" ShowCaption="False" Index="0" RelativeSize="49.644381223328594" IsNewNode="True">
-                <LayoutItem Id="ProductCategoryName" ViewItem="ProductCategoryName" Index="0" RelativeSize="6.679764243614931" IsNewNode="True" />
-                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="1" RelativeSize="93.32023575638507" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a" ShowCaption="False" Index="1" RelativeSize="50.355618776671406" IsNewNode="True">
-                <LayoutItem Id="SteelsCategory" ViewItem="SteelsCategory" Index="0" RelativeSize="6.679764243614931" IsNewNode="True" />
-                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="93.32023575638507" IsNewNode="True" />
-              </LayoutGroup>
+        <TabbedGroup Id="Item2" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+            <LayoutGroup Id="Auto1b72bb53-192e-4101-95af-332ff91ac417" ShowCaption="False" Index="0" RelativeSize="49.57865168539326" IsNewNode="True">
+              <LayoutItem Id="ProductCategoryName" ViewItem="ProductCategoryName" Index="0" RelativeSize="4.337349397590361" IsNewNode="True" />
+              <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="1" RelativeSize="95.66265060240964" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
-              <LayoutGroup Id="Elements_Group" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="Elements" ViewItem="Elements" Index="0" RelativeSize="100" IsNewNode="True" />
-              </LayoutGroup>
+            <LayoutGroup Id="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a" ShowCaption="False" Index="1" RelativeSize="50.42134831460674" IsNewNode="True">
+              <LayoutItem Id="SteelsCategory" ViewItem="SteelsCategory" Index="0" RelativeSize="4.337349397590361" IsNewNode="True" />
+              <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="95.66265060240964" IsNewNode="True" />
             </LayoutGroup>
-          </TabbedGroup>
-          <LayoutGroup Id="Elements_Group" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="100" IsNewNode="True">
+            <LayoutItem Id="ChronologyItems" ViewItem="ChronologyItems" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+        </TabbedGroup>
+        <LayoutGroup Id="Main" RelativeSize="100" Removed="True">
+          <LayoutGroup Id="ChronologyItems_Group" Direction="Vertical" RelativeSize="84.20310296191819" Removed="True">
+            <LayoutItem Id="ChronologyItems" RelativeSize="100" />
+          </LayoutGroup>
           <LayoutGroup Id="SimpleEditors" RelativeSize="100" Removed="True">
             <LayoutGroup Id="SteelCategory" RelativeSize="17.94871794871795" Index="0">
               <LayoutItem Id="SteelsCategory" RelativeSize="100" Removed="True" />
@@ -258,7 +260,6 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="ProductCategory_Elements_ListView" AllowEdit="True" />
     <DetailView Id="ProductionOrder_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -317,6 +318,44 @@
       </Columns>
     </ListView>
     <ListView Id="ProductionOrder_ProductionOrderItems_ListView" AllowEdit="True" />
+    <DetailView Id="ProductionTask_DetailView">
+      <Layout>
+        <TabbedGroup Id="Item3" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="4.337349397590361" IsNewNode="True">
+              <LayoutItem Id="ProductionOrder" ViewItem="ProductionOrder" Index="0" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="DocumentState" ViewItem="DocumentState" Index="1" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="95.66265060240964" IsNewNode="True">
+              <LayoutItem Id="ProductionTaskItems" ViewItem="ProductionTaskItems" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </TabbedGroup>
+        <LayoutGroup Id="Main" ShowCaption="False" Index="0" RelativeSize="100" Removed="True" />
+      </Layout>
+    </DetailView>
+    <ListView Id="ProductionTask_ProductionTaskItems_ListView" MasterDetailMode="ListViewAndDetailView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="ChronologyItem" Index="-1" />
+        <ColumnInfo Id="Progres" Index="2" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ProductionTaskItem_DetailView">
+      <Layout>
+        <LayoutItem Id="Elements" ViewItem="Elements" Index="0" RelativeSize="100" IsNewNode="True" />
+        <LayoutGroup Id="Main" RelativeSize="100" Removed="True">
+          <LayoutGroup Id="Elements_Group" Direction="Vertical" RelativeSize="100" Index="0" Removed="True">
+            <LayoutItem Id="Elements" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.6417489421720735" Removed="True">
+            <LayoutGroup Id="XPObject" Index="0" RelativeSize="100" Caption="Oid" Removed="True">
+              <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ProductionTaskItem" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="SteelCategory_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">

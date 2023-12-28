@@ -2,6 +2,7 @@
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 using MyTest.Module.BusinessObjects.Core;
+using MyTest.Module.BusinessObjects.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,6 @@ namespace MyTest.Module.BusinessObjects.Production
 
         ProductionTask _ProductionTask;
         [Association]
-        [ImmediatePostData]
         public ProductionTask ProductionTask
         {
             get => _ProductionTask;
@@ -42,12 +42,22 @@ namespace MyTest.Module.BusinessObjects.Production
                     Index = ProductionTask?.ProductionTaskItems?.Count * 10 ?? 0;
             }
         }
-
-        bool _Completed;
-        public bool Completed
+        ProductCategory _ChronologyItem;
+        [Association]
+        public ProductCategory ChronologyItem
         {
-            get => _Completed;
-            set => SetPropertyValue(nameof(Completed), ref _Completed, value);
+            get => _ChronologyItem;
+            set => SetPropertyValue(nameof(ChronologyItem), ref _ChronologyItem, value);
+        }
+
+        [Association]
+        public XPCollection<Element> Elements => GetCollection<Element>(nameof(Elements));
+
+        float _Progres;
+        public float Progres
+        {
+            get => _Progres;
+            set => SetPropertyValue(nameof(Progres), ref _Progres, value);
         }
         public override void AfterConstruction()
         {
