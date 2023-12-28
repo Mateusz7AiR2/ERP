@@ -164,7 +164,7 @@
       <Layout>
         <TabbedGroup Id="Item3">
           <LayoutGroup Id="Item2" Caption="Zadanie produkcyjne">
-            <LayoutGroup Id="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8" Caption="" />
+            <LayoutGroup Id="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8" Caption="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8(3)" />
             <LayoutGroup Id="Item4" Caption="Pozycje" />
           </LayoutGroup>
         </TabbedGroup>

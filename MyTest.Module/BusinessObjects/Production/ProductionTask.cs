@@ -15,24 +15,17 @@ using System.Threading.Tasks;
 
 namespace MyTest.Module.BusinessObjects.Production
 {
-    [DefaultProperty(nameof(Symbol))]
     public class ProductionTask : BaseClass, ITransitions
     {
         public ProductionTask(Session session) : base(session)
         {
         }
 
-        ProductionOrder _ProductionOrder;
-        public ProductionOrder ProductionOrder
+        ProductionOrderItem _ProductionOrderItem;
+        public ProductionOrderItem ProductionOrderItem
         {
-            get => _ProductionOrder;
-            set => SetPropertyValue(nameof(ProductionOrder), ref _ProductionOrder, value);
-        }
-        string _Symbol;
-        public string Symbol
-        {
-            get => _Symbol;
-            set => SetPropertyValue(nameof(Symbol), ref _Symbol, value);
+            get => _ProductionOrderItem;
+            set => SetPropertyValue(nameof(ProductionOrderItem), ref _ProductionOrderItem, value);
         }
 
         BaseDocumentState _DocumentState;
@@ -40,6 +33,13 @@ namespace MyTest.Module.BusinessObjects.Production
         {
             get => _DocumentState;
             set => SetPropertyValue(nameof(DocumentState), ref _DocumentState, value);
+        }
+
+        Product.Product _Product;
+        public Product.Product Product
+        {
+            get => _Product;
+            set => SetPropertyValue(nameof(Product), ref _Product, value);
         }
 
         float _Progres;

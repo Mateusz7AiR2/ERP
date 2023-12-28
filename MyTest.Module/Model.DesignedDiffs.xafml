@@ -352,11 +352,12 @@
       <Layout>
         <TabbedGroup Id="Item3" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
           <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
-            <LayoutGroup Id="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="4.337349397590361" IsNewNode="True">
-              <LayoutItem Id="ProductionOrder" ViewItem="ProductionOrder" Index="0" RelativeSize="50" IsNewNode="True" />
-              <LayoutItem Id="DocumentState" ViewItem="DocumentState" Index="1" RelativeSize="50" IsNewNode="True" />
+            <LayoutGroup Id="Auto1282daa5-3b66-4bcb-9b59-78113a1264b8" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="2.925531914893617" IsNewNode="True">
+              <LayoutItem Id="ProductionOrderItem" ViewItem="ProductionOrderItem" Index="0" RelativeSize="33.30536912751678" IsNewNode="True" />
+              <LayoutItem Id="Product" ViewItem="Product" Index="1" RelativeSize="33.30536912751678" IsNewNode="True" />
+              <LayoutItem Id="DocumentState" ViewItem="DocumentState" Index="2" RelativeSize="33.38926174496644" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="95.66265060240964" IsNewNode="True">
+            <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="97.07446808510639" IsNewNode="True">
               <LayoutItem Id="ProductionTaskItems" ViewItem="ProductionTaskItems" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
@@ -364,6 +365,11 @@
         <LayoutGroup Id="Main" ShowCaption="False" Index="0" RelativeSize="100" Removed="True" />
       </Layout>
     </DetailView>
+    <ListView Id="ProductionTask_ListView" IsGroupPanelVisible="False">
+      <Columns>
+        <ColumnInfo Id="ProductionOrderItem.ProductionOrder.NameProductionOrder" PropertyName="ProductionOrderItem.ProductionOrder.NameProductionOrder" Index="-1" SortOrder="Ascending" GroupIndex="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <ListView Id="ProductionTask_ProductionTaskItems_ListView" MasterDetailMode="ListViewAndDetailView" AllowEdit="True">
       <Columns>
         <ColumnInfo Id="ChronologyItem" Index="-1" />

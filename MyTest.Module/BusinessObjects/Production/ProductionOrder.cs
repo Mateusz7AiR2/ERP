@@ -71,14 +71,6 @@ namespace MyTest.Module.BusinessObjects.Production
             set { SetPropertyValue(nameof(NameProductionOrder), ref _nameProductionOrder, value); }
         }
 
-        [Association("ProductionOrder-ProductionOrderItem")]
-        public XPCollection<ProductionOrderItem> ProductionOrderItems
-        {
-            get
-            {
-                return GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
-            }
-        }
 
         private bool _deleteProtect;
         public bool DeleteProtect
@@ -95,5 +87,7 @@ namespace MyTest.Module.BusinessObjects.Production
                 throw new InvalidOperationException("Nie można usunąć. Wygenerowano już zadania produkcyjne");
             }
         }
+        [Association]
+        public XPCollection<ProductionOrderItem> ProductionOrderItems => GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
     }
 }
