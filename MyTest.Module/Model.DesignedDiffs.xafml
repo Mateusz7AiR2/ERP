@@ -295,6 +295,7 @@
         <ColumnInfo Id="Priority" Index="3" />
       </Columns>
     </ListView>
+    <ListView Id="ProductionOrder_ProductionOrderItems_ListView" AllowEdit="True" />
     <DetailView Id="SteelCategory_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">

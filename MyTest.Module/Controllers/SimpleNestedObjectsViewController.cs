@@ -21,7 +21,8 @@ namespace MyTest.Module.Controllers
         {
             base.TargetViewId = TargetViewIds;
         }
-        protected virtual string TargetViewIds => "ProductionTask_ProductionTaskItems_ListView";
+        protected virtual string TargetViewIds => "ProductionTask_ProductionTaskItems_ListView;" +
+            "ProductionOrder_ProductionOrderItems_ListView";
 
         protected override void OnActivated()
         {
