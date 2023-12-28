@@ -248,7 +248,7 @@ public class Updater : ModuleUpdater {
         if (MBWLacid == null)
         {
             MBWLacid = ObjectSpace.CreateObject<ProductCategory>();
-            MBWLacid.ProductCategoryName = "MBWL";
+            MBWLacid.ProductCategoryName = "MBWL S235";
             MBWLacid.SteelsCategory = SteelType.acidResistantPlate;
         }
     }

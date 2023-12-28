@@ -51,7 +51,7 @@ namespace MyTest.Module.BusinessObjects.Production
         }
 
         [Association]
-        public XPCollection<Element> Elements => GetCollection<Element>(nameof(Elements));
+        public XPCollection<ElementToProductionTask> Elements => GetCollection<ElementToProductionTask>(nameof(Elements));
 
         float _Progres;
         public float Progres
