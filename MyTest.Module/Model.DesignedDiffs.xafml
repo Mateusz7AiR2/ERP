@@ -99,7 +99,7 @@
         <LayoutItem Id="Elements" ViewItem="Elements" Index="0" RelativeSize="100" IsNewNode="True" />
       </Layout>
     </DetailView>
-    <ListView Id="ChronologyTaskItem_Elements_ListView" ClassName="MyTest.Module.BusinessObjects.Product.Element" DataAccessMode="Client" IsNewNode="True">
+    <ListView Id="ChronologyTaskItem_Elements_ListView" ClassName="MyTest.Module.BusinessObjects.Product.Element" DataAccessMode="Client" AllowEdit="True" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="Completed" PropertyName="Completed" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="CreatedOn" PropertyName="CreatedOn" Index="-1" IsNewNode="True" />

@@ -24,7 +24,7 @@ namespace MyTest.Module.BusinessObjects.Product
 
         [Association]
         public XPCollection<ProductionTaskItem> ChronologyItems => GetCollection<ProductionTaskItem>(nameof(ChronologyItems));
-
-
+       
+        
     }
 }

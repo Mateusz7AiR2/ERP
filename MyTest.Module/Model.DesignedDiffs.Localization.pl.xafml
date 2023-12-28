@@ -67,6 +67,16 @@
       </OwnMembers>
     </Class>
   </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.EmployeeRole" Value="Rola klienta" />
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.EntityRole" Value="Rola kontrahenta" />
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.Gender" Value="Płeć" />
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.Priority" Value="Priorytet" />
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.ProductionState" Value="Stan zlecenia produkcyjnego" />
+      <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.SteelType" Value="Rodzaj blachy" />
+    </LocalizationGroup>
+  </Localization>
   <NavigationItems>
     <Items>
       <Item Id="Product" Caption="Wyroby">
