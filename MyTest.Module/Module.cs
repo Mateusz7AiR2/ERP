@@ -39,6 +39,7 @@ public sealed class MyTestModule : ModuleBase {
         ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
         PredefinedReportsUpdater predefinedReportsUpdater = new PredefinedReportsUpdater(Application, objectSpace, versionFromDB);
         predefinedReportsUpdater.AddPredefinedReport<ProductionCodeReport>("Specyfikacja produkcyjna", typeof(ProductionTask), true);
+        predefinedReportsUpdater.AddPredefinedReport<ProductionCodeReport>("Kody Pracowników", typeof(Person), true);
         return new ModuleUpdater[] { updater, predefinedReportsUpdater };
     }
     public override void Setup(XafApplication application) {

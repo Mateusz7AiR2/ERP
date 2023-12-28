@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="MyTest">
   <BOModel>
+    <Class Name="MyTest.Module.BusinessObjects.CRM.Person" IsVisibleInReports="True" />
     <Class Name="MyTest.Module.BusinessObjects.Product.Element" IsVisibleInDashboards="True" IsVisibleInReports="True" />
     <Class Name="MyTest.Module.BusinessObjects.Product.Product" IsVisibleInDashboards="True" IsVisibleInReports="True" />
     <Class Name="MyTest.Module.BusinessObjects.Product.ProductCategory" ImageName="" />
