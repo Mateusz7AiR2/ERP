@@ -113,6 +113,26 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="ProductionOrder_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="ProductionOrder" Caption="Zlecenie produkcyjne" />
+              <LayoutGroup Id="Item4" Caption="Wyrób">
+                <LayoutGroup Id="Products" Caption="Wyrób" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="ProductionOrder" Caption="Production Order">
+              <LayoutGroup Id="Item2" Caption="Wyroby">
+                <LayoutGroup Id="Products" Caption="Wyrób" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="Oid" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="SteelCategory_DetailView">
       <Layout>
         <LayoutGroup Id="Main">
