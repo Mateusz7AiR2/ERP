@@ -1,2 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application />
+<Application>
+  <BOModel>
+    <Class Name="MyTest.Module.BusinessObjects.CRM.Entity" Caption="Kontrahent">
+      <OwnMembers>
+        <Member Name="Country" Caption="Kraj" />
+        <Member Name="CountryRegion" Caption="Wojewódstwo" />
+        <Member Name="DefaultEmail" Caption="E-mail" />
+        <Member Name="EntityRole" Caption="Rola kontrahenta" />
+        <Member Name="Locality" Caption="Miasto" />
+        <Member Name="LongName" Caption="Nazwa" />
+        <Member Name="PhoneNumber" Caption="Numer telefonu" />
+        <Member Name="ShortName" Caption="Skrót" />
+        <Member Name="Street" Caption="Ulica" />
+        <Member Name="StreetNumber" Caption="Numer domu" />
+        <Member Name="VATIN" Caption="NIP" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.CRM.Person" Caption="Osoba">
+      <OwnMembers>
+        <Member Name="DefaultEmail" Caption="E-mail" />
+        <Member Name="EmployeeRole" Caption="Rola osoby" />
+        <Member Name="FirstName" Caption="Imie" />
+        <Member Name="Gender" Caption="Płeć" />
+        <Member Name="LastName" Caption="Nazwisko" />
+        <Member Name="PhoneNumber" Caption="Numer telefonu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.Product.Product" Caption="Produkt">
+      <OwnMembers>
+        <Member Name="Description" Caption="Uwagi" />
+        <Member Name="Linework" Caption="Praca w linii produkcyjnej" />
+        <Member Name="ProductCategory" Caption="Kategoria" />
+        <Member Name="ProductSizeName" Caption="Nazwa" />
+        <Member Name="SteelCategory" Caption="Rodzaj materiału" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.Product.ProductCategory" Caption="Kategoria produktu">
+      <OwnMembers>
+        <Member Name="ProductCategoryName" Caption="Rodzaj" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.Product.SteelCategory" Caption="Rodzaj materiału">
+      <OwnMembers>
+        <Member Name="SteelsCategory" Caption="Rodzaj materiału" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.Product.UnitOfMeasure" Caption="Jednostka miary">
+      <OwnMembers>
+        <Member Name="BeaseUnitOfMeasure" Caption="Jednostka miary" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.Production.ProductionOrder" Caption="Zlecenie produkcyjne">
+      <OwnMembers>
+        <Member Name="AvailableDesigners" Caption="Konstruktor" />
+        <Member Name="Entity" Caption="Kontrahent" />
+        <Member Name="NameProductionOrder" Caption="Zlecenie numer" />
+        <Member Name="PlannedFinishDate" Caption="Planowana data ukończenia" />
+        <Member Name="Priority" Caption="Priorytet" />
+        <Member Name="ProductionState" Caption="Stan zlecenia" />
+        <Member Name="Products" Caption="Wyrób" />
+        <Member Name="ProjectManager" Caption="Odpowiedzialny za projekt" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MyTest.Module.BusinessObjects.Production.ProductionTaskKind" Caption="Rodzaj operacji">
+      <OwnMembers>
+        <Member Name="TaskKindName" Caption="Rodzaj operacji" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views>
+    <DetailView Id="Entity_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Entity" Caption="Kontrahent" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Person_DetailView">
+      <Layout>
+        <LayoutGroup Id="Item1" Caption="Osoba">
+          <LayoutGroup Id="Autoda33d4a6-2d78-4ddf-a87c-3a6f38ae6ecc" Caption="" />
+          <LayoutGroup Id="Autof157ff34-20c5-4309-8c29-df31ebc9cbb8" Caption="">
+            <LayoutGroup Id="Auto8720c3ea-f3c7-4863-afd0-bc5773d35e20" Caption="" />
+            <LayoutGroup Id="Auto594303f1-ee80-4c3a-9319-e32ac04281dc" Caption="">
+              <LayoutGroup Id="Autoe7a08add-31b6-4d57-a1f4-54ca5f4a92c2" Caption="" />
+              <LayoutGroup Id="Auto362281a0-3426-4dfc-8a94-837689415071" Caption="">
+                <LayoutGroup Id="Autoe04b1645-f72b-4aa6-9d5b-bb4319ac7242" Caption="" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Product_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Product" Caption="Produkt" />
+            <LayoutGroup Id="XPObject" Caption="Oid" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProductCategory_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="XPObject" Caption="Oid" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SteelCategory_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="XPObject" Caption="Oid">
+              <LayoutGroup Id="Autoca73c65c-0f08-4b03-8c75-372de954b259" Caption="" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

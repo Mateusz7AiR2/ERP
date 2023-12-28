@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="MyTest">
+  <BOModel>
+    <Class Name="MyTest.Module.BusinessObjects.Product.SteelCategory">
+      <OwnMembers>
+        <Member Name="SteelsCategory" DataSourcePropertyIsNullMode="SelectAll" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
   <Localization>
     <LocalizationGroup Name="Enums">
       <LocalizationGroup Name="MyTest.Module.BusinessObjects.Enum.EmployeeRole">
@@ -86,26 +93,28 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="Entity" RelativeSize="30.76923076923077">
-              <LayoutGroup Id="Entity_col1" RelativeSize="49.88610478359909">
-                <LayoutItem Id="LongName" RelativeSize="20.454545454545453" />
-                <LayoutItem Id="ShortName" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="VATIN" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="DefaultEmail" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="PhoneNumber" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="Oid" ViewItem="Oid" Index="5" RelativeSize="20.454545454545453" IsNewNode="True" />
+            <LayoutGroup Id="Entity" RelativeSize="34.472934472934476">
+              <LayoutGroup Id="Entity_col1" RelativeSize="45.9613196814562">
+                <LayoutItem Id="LongName" RelativeSize="17.821782178217823" />
+                <LayoutItem Id="ShortName" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="VATIN" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="DefaultEmail" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="PhoneNumber" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="ObjectCode" ViewItem="ObjectCode" Index="5" RelativeSize="12.871287128712872" IsNewNode="True" />
+                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="6" RelativeSize="17.821782178217823" IsNewNode="True" />
                 <LayoutItem Id="Street" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Entity_col2" RelativeSize="50.11389521640091">
-                <LayoutItem Id="Street" ViewItem="Street" Index="0" RelativeSize="20.454545454545453" IsNewNode="True" />
-                <LayoutItem Id="StreetNumber" Index="1" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="Locality" Index="2" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="CountryRegion" Index="3" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="Country" Index="4" RelativeSize="14.772727272727273" />
-                <LayoutItem Id="EntityRole" Index="5" RelativeSize="20.454545454545453" />
+              <LayoutGroup Id="Entity_col2" RelativeSize="54.0386803185438">
+                <LayoutItem Id="Street" ViewItem="Street" Index="0" RelativeSize="17.821782178217823" IsNewNode="True" />
+                <LayoutItem Id="StreetNumber" Index="1" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="Locality" Index="2" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="CountryRegion" Index="3" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="Country" Index="4" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="EntityRole" Index="5" RelativeSize="12.871287128712872" />
+                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="6" RelativeSize="17.821782178217823" IsNewNode="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="XPObject" Index="1" RelativeSize="69.23076923076923" Caption="Oid">
+            <LayoutGroup Id="XPObject" Index="1" RelativeSize="65.52706552706553" Caption="Oid">
               <LayoutItem Id="Item1" Index="0" RelativeSize="100" IsNewNode="True" />
               <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
             </LayoutGroup>
@@ -113,41 +122,152 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Entity_ListView">
+      <Columns>
+        <ColumnInfo Id="Country" Index="-1" />
+        <ColumnInfo Id="CountryRegion" Index="-1" />
+        <ColumnInfo Id="Locality" Index="-1" />
+        <ColumnInfo Id="Street" Index="-1" />
+        <ColumnInfo Id="StreetNumber" Index="-1" />
+        <ColumnInfo Id="VATIN" Index="-1" />
+        <ColumnInfo Id="DefaultEmail" Index="2" />
+        <ColumnInfo Id="PhoneNumber" Index="3" />
+        <ColumnInfo Id="EntityRole" Index="4" />
+      </Columns>
+    </ListView>
     <DetailView Id="Person_DetailView">
       <Layout>
-        <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="Person" RelativeSize="100">
-            <LayoutGroup Id="Person_col1" RelativeSize="33.278955954323">
-              <LayoutItem Id="FullName" RelativeSize="20.05420054200542" />
-              <LayoutItem Id="FirstName" RelativeSize="3.5230352303523036" />
-              <LayoutItem Id="MiddleName" RelativeSize="25.338753387533874" />
-              <LayoutItem Id="LastName" RelativeSize="3.5230352303523036" />
-              <LayoutItem Id="DisplayName" RelativeSize="47.5609756097561" />
+        <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="Autoda33d4a6-2d78-4ddf-a87c-3a6f38ae6ecc" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="5.521472392638037" IsNewNode="True">
+            <LayoutItem Id="FirstName" ViewItem="FirstName" Index="0" RelativeSize="49.943117178612056" IsNewNode="True" />
+            <LayoutItem Id="LastName" ViewItem="LastName" Index="1" RelativeSize="50.056882821387944" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Autof157ff34-20c5-4309-8c29-df31ebc9cbb8" ShowCaption="False" Index="1" RelativeSize="94.47852760736197" IsNewNode="True">
+            <LayoutGroup Id="Auto8720c3ea-f3c7-4863-afd0-bc5773d35e20" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="4.220779220779221" IsNewNode="True">
+              <LayoutItem Id="DefaultEmail" ViewItem="DefaultEmail" Index="0" RelativeSize="49.943117178612056" IsNewNode="True" />
+              <LayoutItem Id="EmployeeRole" ViewItem="EmployeeRole" Index="1" RelativeSize="50.056882821387944" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutGroup Id="Person_col2" RelativeSize="37.35725938009788">
-              <LayoutGroup Id="Auto26827193-c872-4a46-a4fb-07ecadd0e290" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="4.607046070460704" IsNewNode="True">
-                <LayoutItem Id="Gender" ViewItem="Gender" Index="0" RelativeSize="62.44541484716157" IsNewNode="True" />
-                <LayoutItem Id="Email" Index="1" RelativeSize="37.55458515283843" IsNewNode="True" />
+            <LayoutGroup Id="Auto594303f1-ee80-4c3a-9319-e32ac04281dc" ShowCaption="False" Index="1" RelativeSize="95.77922077922078" IsNewNode="True">
+              <LayoutGroup Id="Autoe7a08add-31b6-4d57-a1f4-54ca5f4a92c2" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="4.406779661016949" IsNewNode="True">
+                <LayoutItem Id="Gender" ViewItem="Gender" Index="0" RelativeSize="49.943117178612056" IsNewNode="True" />
+                <LayoutItem Id="PhoneNumber" ViewItem="PhoneNumber" Index="1" RelativeSize="50.056882821387944" IsNewNode="True" />
               </LayoutGroup>
+              <LayoutGroup Id="Auto362281a0-3426-4dfc-8a94-837689415071" ShowCaption="False" Index="1" RelativeSize="95.59322033898304" IsNewNode="True">
+                <LayoutItem Id="ObjectCode" ViewItem="ObjectCode" Index="0" RelativeSize="4.609929078014185" IsNewNode="True" />
+                <LayoutGroup Id="Autoe04b1645-f72b-4aa6-9d5b-bb4319ac7242" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="95.39007092198581" IsNewNode="True">
+                  <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="0" RelativeSize="49.943117178612056" IsNewNode="True" />
+                  <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="50.056882821387944" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+        <LayoutGroup Id="Main" RelativeSize="100" Removed="True">
+          <LayoutGroup Id="Person" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="Person_col1" RelativeSize="100" Direction="Vertical">
+              <LayoutItem Id="FirstName" ViewItem="FirstName" Index="0" RelativeSize="50" Removed="True" />
+              <LayoutItem Id="LastName" ViewItem="LastName" Index="1" RelativeSize="50" Removed="True" />
+              <LayoutItem Id="MiddleName" RelativeSize="93.95017793594306" Index="1" Removed="True" />
+              <LayoutItem Id="DisplayName" RelativeSize="58.362989323843415" Index="3" Removed="True" />
+              <LayoutItem Id="FullName" RelativeSize="20.05420054200542" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Person_col2" RelativeSize="66.85082872928177" Removed="True">
               <LayoutItem Id="Email" Index="0" RelativeSize="24.796747967479675" Removed="True" />
-              <LayoutGroup Id="Auto9252446d-827a-4ab9-8c68-1039df7c0c66" ShowCaption="False" Caption="Auto9252446d-827a-4ab9-8c68-1039df7c0c66(11)" Direction="Horizontal" Index="1" RelativeSize="5.149051490514905" IsNewNode="True">
-                <LayoutItem Id="Birthday" Index="0" RelativeSize="37.55458515283843" IsNewNode="True" />
-                <LayoutItem Id="Oid" ViewItem="Oid" Index="1" RelativeSize="62.44541484716157" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutItem Id="Image" ViewItem="Image" Index="2" RelativeSize="3.5230352303523036" IsNewNode="True" />
-              <LayoutItem Id="Address1" Index="3" RelativeSize="63.143631436314365" />
-              <LayoutItem Id="Address2" Index="4" RelativeSize="23.577235772357724" />
+              <LayoutItem Id="Address1" Index="3" RelativeSize="60.854092526690394" Removed="True" />
+              <LayoutItem Id="Address2" Index="3" RelativeSize="83.80782918149467" Removed="True" />
               <LayoutItem Id="Birthday" Removed="True" />
             </LayoutGroup>
-            <LayoutItem Id="Photo" RelativeSize="29.363784665579118" />
+            <LayoutItem Id="Photo" RelativeSize="29.558011049723756" Removed="True" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="ProductionTask_ProductionTaskItems_ListView" AllowEdit="True" AllowLink="False" AllowUnlink="False">
+    <ListView Id="Person_ListView">
       <Columns>
-        <ColumnInfo Id="Index" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="DefaultEmail" Index="-1" />
+        <ColumnInfo Id="Gender" Index="-1" />
+        <ColumnInfo Id="FirstName" Width="120" />
       </Columns>
     </ListView>
+    <DetailView Id="Product_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Product" RelativeSize="28.11387900355872">
+              <LayoutGroup Id="Product_col1" RelativeSize="49.857549857549856">
+                <LayoutItem Id="ProductSizeName" RelativeSize="28.333333333333332" />
+                <LayoutItem Id="Description" RelativeSize="21.666666666666668" />
+                <LayoutItem Id="ProductCategory" RelativeSize="21.666666666666668" />
+                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="3" RelativeSize="28.333333333333332" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Product_col2" RelativeSize="50.142450142450144">
+                <LayoutItem Id="SteelCategory" RelativeSize="28.333333333333332" />
+                <LayoutItem Id="Linework" RelativeSize="21.666666666666668" />
+                <LayoutItem Id="ObjectCode" ViewItem="ObjectCode" Index="2" RelativeSize="21.666666666666668" IsNewNode="True" />
+                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="3" RelativeSize="28.333333333333332" IsNewNode="True" />
+                <LayoutItem Id="ProductionOrders" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Index="1" RelativeSize="71.88612099644128">
+              <LayoutItem Id="Item1" Index="0" RelativeSize="100" IsNewNode="True" />
+              <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Product_ListView">
+      <Columns>
+        <ColumnInfo Id="Description" Index="-1" />
+        <ColumnInfo Id="ProductionOrders" Index="-1" />
+        <ColumnInfo Id="ProductCategory" Index="1" />
+        <ColumnInfo Id="SteelCategory" Index="2" />
+        <ColumnInfo Id="Linework" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ProductCategory_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ProductCategory" RelativeSize="5.698005698005698">
+              <LayoutItem Id="ProductCategoryName" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="SteelCategory" RelativeSize="4.843304843304844">
+              <LayoutItem Id="SteelsCategory" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Index="2" RelativeSize="89.45868945868946" Direction="Horizontal">
+              <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="0" RelativeSize="49.94475138121547" IsNewNode="True" />
+              <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="5.882352941176471" Removed="True" />
+              <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="50.05524861878453" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ProductionOrder_ListView">
+      <Columns>
+        <ColumnInfo Id="PlannedFinishDate" Index="2" />
+        <ColumnInfo Id="Priority" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SteelCategory_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SteelCategory" RelativeSize="5.698005698005698">
+              <LayoutItem Id="SteelsCategory" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Index="1" RelativeSize="94.3019943019943">
+              <LayoutGroup Id="Autoca73c65c-0f08-4b03-8c75-372de954b259" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="4.531722054380665" IsNewNode="True">
+                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="0" RelativeSize="49.94475138121547" IsNewNode="True" />
+                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="50.05524861878453" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Item1" Index="1" RelativeSize="95.46827794561933" IsNewNode="True" />
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>
