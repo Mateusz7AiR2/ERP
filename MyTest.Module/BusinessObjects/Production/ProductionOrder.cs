@@ -7,10 +7,12 @@ using MyTest.Module.BusinessObjects.CRM;
 using MyTest.Module.BusinessObjects.Enum;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Person = MyTest.Module.BusinessObjects.CRM.Person;
+using Product = MyTest.Module.BusinessObjects.Product.Product;
 
 namespace MyTest.Module.BusinessObjects.Production
 {
@@ -58,7 +60,26 @@ namespace MyTest.Module.BusinessObjects.Production
         public ProductionState ProductionState
         {
             get { return _productionState; }
-            set { SetPropertyValue(nameof(_productionState), ref _productionState, value); }
+            set { SetPropertyValue(nameof(ProductionState), ref _productionState, value); }
         }
+
+        private string _nameProductionOrder;
+        public string NameProductionOrder
+        {
+            get { return _nameProductionOrder; }
+            set { SetPropertyValue(nameof(NameProductionOrder), ref _nameProductionOrder, value); }
+        }
+
+        [Association("ProductionOrder-Products")]
+        //[LookupEditorMode(typeof(Product))]
+        //public XPCollection<MyTest.Module.BusinessObjects.Product.Product> Products => GetCollection<MyTest.Module.BusinessObjects.Product.Product>("Products");
+        public XPCollection<Product.Product> Products
+        {
+            get
+            {
+                return GetCollection<Product.Product>(nameof(Products));
+            }
+        }
+
     }
 }

@@ -1,7 +1,9 @@
-﻿using DevExpress.ExpressApp.ConditionalAppearance;
+﻿using DevExpress.CodeParser;
+using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.Xpo;
 using MyTest.Module.BusinessObjects.Core;
 using MyTest.Module.BusinessObjects.CRM;
+using MyTest.Module.BusinessObjects.Production;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,6 +78,16 @@ namespace MyTest.Module.BusinessObjects.Product
             }
 
 
+        }
+        private ProductionOrder _productionOrders;
+        [Association("ProductionOrder-Products")]
+        public ProductionOrder  ProductionOrders
+        {
+            get { return _productionOrders; }
+            set
+            {
+                SetPropertyValue("ProductionOrders", ref _productionOrders, value);
+            }
         }
     }
 }
