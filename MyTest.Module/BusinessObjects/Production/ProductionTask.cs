@@ -1,5 +1,8 @@
-﻿using DevExpress.Xpo;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.Xpo;
 using MyTest.Module.BusinessObjects.Core;
+using MyTest.Module.BusinessObjects.Core.Dictionaries;
+using MyTest.Module.BusinessObjects.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +32,11 @@ namespace MyTest.Module.BusinessObjects.Production
             set => SetPropertyValue(nameof(Symbol), ref _Symbol, value);
         }
 
-        string _State;
-        public string State
+        BaseDocumentState _DocumentState;
+        public BaseDocumentState DocumentState
         {
-            get => _State;
-            set => SetPropertyValue(nameof(State), ref _State, value);
+            get => _DocumentState;
+            set => SetPropertyValue(nameof(DocumentState), ref _DocumentState, value);
         }
 
         float _Progres;
@@ -49,7 +52,7 @@ namespace MyTest.Module.BusinessObjects.Production
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            State = "Nie rozpoczęto";
+            this.DocumentState = Session.FindObject<BaseDocumentState>(new BinaryOperator(nameof(BaseDocumentState.SystemDocumentState), SystemDocumentState.Created));
         }
     }
 }
