@@ -55,7 +55,7 @@ namespace MyTest.Module.Controllers
                 foreach (var element in chronologyItem.Elements)
                 {
                     ElementToProductionTask newElement = space.CreateObject<ElementToProductionTask>();
-                    newElement.ElementName = element.ElementName;
+                    newElement.ElementName = space.GetObject(element.ElementName);
                     newElement.ProductionTaskItem = productionTaskItem;
                 }
             }

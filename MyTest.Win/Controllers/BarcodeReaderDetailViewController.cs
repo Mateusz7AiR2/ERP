@@ -1,8 +1,11 @@
 ﻿using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Security.ClientServer;
+using DevExpress.ExpressApp.Xpo;
 using DevExpress.Xpo;
 using DevExpress.XtraEditors;
 using MyTest.Module.BusinessObjects.CRM;
 using MyTest.Module.BusinessObjects.Product;
+using MyTest.Module.BusinessObjects.Production;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,9 +20,20 @@ namespace MyTest.Win.Controllers
     {
         private readonly List<SerialPort> serials = new();
         ElementToProductionTask current = null;
+        XPObjectSpaceProvider securedObjectSpaceProvider;
+        IObjectSpace unsecuredObjectSpace;
+        ProductionTask task;
         public BarcodeReaderDetailViewController()
         {
             TargetViewId = "ProductionTask_DetailView";
+        }
+
+        protected override void OnActivated()
+        {
+            base.OnActivated();
+            securedObjectSpaceProvider = new XPObjectSpaceProvider(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString, null);
+            unsecuredObjectSpace = securedObjectSpaceProvider.CreateObjectSpace();
+            task = View?.CurrentObject as ProductionTask;
             int tempBaudRate = 57600;
             var baudRate = ConfigurationManager.AppSettings["BaudRate"];
             if (!string.IsNullOrWhiteSpace(baudRate))
@@ -61,20 +75,21 @@ namespace MyTest.Win.Controllers
         void Serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             var received_data = (sender as SerialPort).ReadExisting();
-            if (DeserializeSystemCode(received_data, ObjectSpace) is ElementToProductionTask etpt)
+            received_data = received_data.Replace("\r", "");
+            if (DeserializeSystemCode(received_data, unsecuredObjectSpace) is ElementToProductionTask etpt)
             {
                 etpt.Completed = true;
                 current = etpt;
             }
-            else if (DeserializeSystemCode(received_data, ObjectSpace) is Person person && current != null)
+            else if (DeserializeSystemCode(received_data, unsecuredObjectSpace) is Person person && current != null)
             {
                 current.Employee = person; current = null;
             }
-            
+            unsecuredObjectSpace.CommitChanges();
         }
         public static Object DeserializeSystemCode(string code, IObjectSpace space)
         {
-            if (!string.IsNullOrWhiteSpace(code) && code.StartsWith('%'))
+            if (!string.IsNullOrWhiteSpace(code) && code.StartsWith('!'))
             {
                 int result = 0;
                 int result2 = 0;
