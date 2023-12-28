@@ -54,7 +54,7 @@ namespace MyTest.Module.Controllers
                 productionTaskItem.ProductionTaskKind = space.GetObject(chronologyItem.ProductionTaskKind);
                 foreach (var element in chronologyItem.Elements)
                 {
-                    Element newElement = space.CreateObject<Element>();
+                    ElementToProductionTask newElement = space.CreateObject<ElementToProductionTask>();
                     newElement.ElementName = element.ElementName;
                     newElement.ProductionTaskItem = productionTaskItem;
                 }
