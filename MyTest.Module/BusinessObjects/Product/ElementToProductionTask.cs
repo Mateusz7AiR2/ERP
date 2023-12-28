@@ -43,6 +43,7 @@ namespace MyTest.Module.BusinessObjects.Product
             get => _Completed;
             set => SetPropertyValue(nameof(Completed), ref _Completed, value);
         }
+        public void Complete() => _Completed = true; 
 
         ProductionTaskItem _ProductionTaskItem;
         [Association]

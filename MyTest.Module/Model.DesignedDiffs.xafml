@@ -112,7 +112,13 @@
         <ColumnInfo Id="ElementName" PropertyName="ElementName" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
       </Columns>
     </ListView>
-    <ListView Id="ElementToProductionTask_ListView" AllowEdit="True" />
+    <ListView Id="ElementToProductionTask_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Completed" Index="-1" />
+        <ColumnInfo Id="Employee" Index="-1" />
+        <ColumnInfo Id="ProductionTaskItem" Index="-1" />
+      </Columns>
+    </ListView>
     <DetailView Id="Entity_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
