@@ -52,7 +52,7 @@ namespace MyTest.Module.BusinessObjects.Product
             {
                 if (SetPropertyValue(nameof(ProductCategory), ref _productCategory, value) && !IsLoading && !IsSaving && !IsDeleted)
                 {
-                    SteelCategory = value?.SteelsCategory.ToString();
+                    SteelCategory = EnumHelper.GetEnumDisplayValue(value?.SteelsCategory);
                 }
 
             }

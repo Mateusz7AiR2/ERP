@@ -25,6 +25,7 @@ namespace MyTest.Module.Controllers
             "ProductionOrder_ProductionOrderItems_ListView;" +
             "ProductionTaskItem_Elements_ListView;" +
             "ChronologyTaskItem_Elements_ListView;" +
+            "ElementToProductionTask_ListView;" +
             "ProductCategory_Elements_ListView;";
 
         protected override void OnActivated()

@@ -177,7 +177,7 @@ public class Updater : ModuleUpdater {
         {
             NSP = ObjectSpace.CreateObject<ProductCategory>();
             NSP.ProductCategoryName = "NSP";
-            //productCategory.SteelsCategory = SteelType.blackPlate;
+            NSP.SteelsCategory = SteelType.blackPlate;
         }
         
         ProductCategory NK = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "NK"));
@@ -185,7 +185,7 @@ public class Updater : ModuleUpdater {
         {
             NK = ObjectSpace.CreateObject<ProductCategory>();
             NK.ProductCategoryName = "NK";
-            //productCategory.SteelsCategory = SteelType.blackPlate;
+            NK.SteelsCategory = SteelType.blackPlate;
         }
 
         ProductCategory RB = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "RB"));
@@ -193,7 +193,7 @@ public class Updater : ModuleUpdater {
         {
             RB = ObjectSpace.CreateObject<ProductCategory>();
             RB.ProductCategoryName = "RB";
-            //productCategory.SteelsCategory = SteelType.blackPlate;
+            RB.SteelsCategory = SteelType.blackPlate;
         }
 
         ProductCategory MVL = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "MVL"));
@@ -201,7 +201,7 @@ public class Updater : ModuleUpdater {
         {
             MVL = ObjectSpace.CreateObject<ProductCategory>();
             MVL.ProductCategoryName = "MVL";
-            //productCategory.SteelsCategory = SteelType.blackPlate;
+            MVL.SteelsCategory = SteelType.blackPlate;
         }
 
         ProductCategory MBWL = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "MBWL"));
@@ -209,31 +209,154 @@ public class Updater : ModuleUpdater {
         {
             MBWL = ObjectSpace.CreateObject<ProductCategory>();
             MBWL.ProductCategoryName = "MBWL";
-            //productCategory.SteelsCategory = SteelType.blackPlate;
+            MBWL.SteelsCategory = SteelType.blackPlate;
         }
 
+        ProductCategory NSPacid = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "NSP S235"));
+        if (NSPacid == null)
+        {
+            NSPacid = ObjectSpace.CreateObject<ProductCategory>();
+            NSPacid.ProductCategoryName = "NSP S235";
+            NSPacid.SteelsCategory = SteelType.acidResistantPlate;
+        }
+
+        ProductCategory NKacid = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "NK S235"));
+        if (NKacid == null)
+        {
+            NKacid = ObjectSpace.CreateObject<ProductCategory>();
+            NKacid.ProductCategoryName = "NK S235";
+            NKacid.SteelsCategory = SteelType.acidResistantPlate;
+        }
+
+        ProductCategory RBacid = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "RB S235"));
+        if (RBacid == null)
+        {
+            RBacid = ObjectSpace.CreateObject<ProductCategory>();
+            RBacid.ProductCategoryName = "RB S235";
+            RBacid.SteelsCategory = SteelType.acidResistantPlate;
+        }
+
+        ProductCategory MVLacid = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "MVL S235"));
+        if (MVLacid == null)
+        {
+            MVLacid = ObjectSpace.CreateObject<ProductCategory>();
+            MVLacid.ProductCategoryName = "MVL S235";
+            MVLacid.SteelsCategory = SteelType.acidResistantPlate;
+        }
+
+        ProductCategory MBWLacid = ObjectSpace.FindObject<ProductCategory>(new BinaryOperator(nameof(ProductCategory.ProductCategoryName), "MBWL S235"));
+        if (MBWLacid == null)
+        {
+            MBWLacid = ObjectSpace.CreateObject<ProductCategory>();
+            MBWLacid.ProductCategoryName = "MBWL S235";
+            MBWLacid.SteelsCategory = SteelType.acidResistantPlate;
+        }
     }
 
     void InitializeProductionTaskKind()
     {
-        ProductionTaskKind materialCuttingProductionTaskKind = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Krojenie"));
+        ProductionTaskKind creatingATechnicalDwawing = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Stworzenie rysunku technicznego"));
+        if (creatingATechnicalDwawing == null)
+        {
+            creatingATechnicalDwawing = ObjectSpace.CreateObject<ProductionTaskKind>();
+            creatingATechnicalDwawing.TaskKindName = "Stworzenie rysunku technicznego";
+        }
+
+        ProductionTaskKind materialCuttingProductionTaskKind = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Cięcie piłą"));
         if (materialCuttingProductionTaskKind == null)
         {
             materialCuttingProductionTaskKind = ObjectSpace.CreateObject<ProductionTaskKind>();
-            materialCuttingProductionTaskKind.TaskKindName = "Krojenie";
+            materialCuttingProductionTaskKind.TaskKindName = "Cięcie piłą";
         }
-        ProductionTaskKind folding = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Falcowanie"));
-        if (folding == null)
+        ProductionTaskKind cleaningSteel = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Śrutowanie"));
+        if (cleaningSteel == null)
         {
-            folding = ObjectSpace.CreateObject<ProductionTaskKind>();
-            folding.TaskKindName = "Falcowanie";
+            cleaningSteel = ObjectSpace.CreateObject<ProductionTaskKind>();
+            cleaningSteel.TaskKindName = "Śrutowanie";
         }
 
-        ProductionTaskKind packing = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Pakowanie"));
+        ProductionTaskKind bending = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Gięcie na prasie"));
+        if (bending == null)
+        {
+            bending = ObjectSpace.CreateObject<ProductionTaskKind>();
+            bending.TaskKindName = "Gięcie na prasie";
+        }
+
+        ProductionTaskKind painting = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Malowanie"));
+        if (painting == null)
+        {
+            painting = ObjectSpace.CreateObject<ProductionTaskKind>();
+            painting.TaskKindName = "Malowanie";
+        }
+
+        ProductionTaskKind CNC = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "CNC"));
+        if (CNC == null)
+        {
+            CNC = ObjectSpace.CreateObject<ProductionTaskKind>();
+            CNC.TaskKindName = "CNC";
+        }
+
+        ProductionTaskKind laser = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Cięcie laserem"));
+        if (laser == null)
+        {
+            laser = ObjectSpace.CreateObject<ProductionTaskKind>();
+            laser.TaskKindName = "Cięcie laserem";
+        }
+
+        ProductionTaskKind acidizing = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Kwasowanie"));
+        if (acidizing == null)
+        {
+            acidizing = ObjectSpace.CreateObject<ProductionTaskKind>();
+            acidizing.TaskKindName = "Kwasowanie";
+        }
+
+        ProductionTaskKind stockEditionMechanic = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Wydanie komponentó na montaż"));
+        if (stockEditionMechanic == null)
+        {
+            stockEditionMechanic = ObjectSpace.CreateObject<ProductionTaskKind>();
+            stockEditionMechanic.TaskKindName = "Wydanie komponentów na montaż";
+        }
+
+        ProductionTaskKind stockEditionElectric = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Wydanie komponentów na dział elektryczny"));
+        if (stockEditionElectric == null)
+        {
+            stockEditionElectric = ObjectSpace.CreateObject<ProductionTaskKind>();
+            stockEditionElectric.TaskKindName = "Wydanie komponentów na dział elektryczny";
+        }
+
+        ProductionTaskKind mechanicalAssembly = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Montaż konstrukcji"));
+        if (mechanicalAssembly == null)
+        {
+            mechanicalAssembly = ObjectSpace.CreateObject<ProductionTaskKind>();
+            mechanicalAssembly.TaskKindName = "Montaż konstrukcji";
+        }
+
+        ProductionTaskKind createTheElectricalCabinet = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Szycie szafy elektrycznej"));
+        if (createTheElectricalCabinet == null)
+        {
+            createTheElectricalCabinet = ObjectSpace.CreateObject<ProductionTaskKind>();
+            createTheElectricalCabinet.TaskKindName = "Szycie szafy elektrycznej";
+        }
+
+        ProductionTaskKind createTheElectricalDiagram = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Przygotowanie schematu elektrycznego"));
+        if (createTheElectricalDiagram == null)
+        {
+            createTheElectricalDiagram = ObjectSpace.CreateObject<ProductionTaskKind>();
+            createTheElectricalDiagram.TaskKindName = "Przygotowanie schematu elektrycznego";
+        }
+
+        ProductionTaskKind electicalAssembly = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Montaż elektryki"));
+        if (electicalAssembly == null)
+        {
+            electicalAssembly = ObjectSpace.CreateObject<ProductionTaskKind>();
+            electicalAssembly.TaskKindName = "Montaż elektryki";
+        }
+
+        ProductionTaskKind packing = ObjectSpace.FindObject<ProductionTaskKind>(new BinaryOperator(nameof(ProductionTaskKind.TaskKindName), "Pakowanie na tira"));
         if (packing == null)
         {
             packing = ObjectSpace.CreateObject<ProductionTaskKind>();
-            packing.TaskKindName = "Pakowanie";
+            packing.TaskKindName = "Pakowanie na tira";
         }
 
     }

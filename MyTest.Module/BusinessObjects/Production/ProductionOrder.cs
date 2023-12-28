@@ -71,6 +71,22 @@ namespace MyTest.Module.BusinessObjects.Production
             set { SetPropertyValue(nameof(NameProductionOrder), ref _nameProductionOrder, value); }
         }
 
+
+        private bool _deleteProtect;
+        public bool DeleteProtect
+        {
+            get { return _deleteProtect; }
+            set { SetPropertyValue(nameof(DeleteProtect), ref _deleteProtect, value); }
+        }
+
+        protected override void OnDeleting()
+        {
+            base.OnDeleting();
+            if (DeleteProtect)
+            {
+                throw new InvalidOperationException("Nie można usunąć. Wygenerowano już zadania produkcyjne");
+            }
+        }
         [Association]
         public XPCollection<ProductionOrderItem> ProductionOrderItems => GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
     }
