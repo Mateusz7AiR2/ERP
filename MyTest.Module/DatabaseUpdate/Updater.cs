@@ -26,7 +26,7 @@ public class Updater : ModuleUpdater {
         InitializeProductCategories();
         InitializeProductionTaskKind();
         InitializeBaseBaseDocumentStates();
-        GenerateProductionTaskStateMachine();
+        //GenerateProductionTaskStateMachine();
 
         ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
     }

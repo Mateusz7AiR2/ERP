@@ -3,13 +3,15 @@ using MyTest.Module.BusinessObjects.Core;
 using MyTest.Module.BusinessObjects.Product;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MyTest.Module.BusinessObjects.Production
 {
-    public class ProductionOrderItem: BaseClass
+    [DefaultProperty(nameof(SubNumberProductionOrder))]
+    public class ProductionOrderItem : BaseClass
     {
         public ProductionOrderItem(Session session) : base(session)
         {
@@ -17,7 +19,7 @@ namespace MyTest.Module.BusinessObjects.Production
 
         private Product.Product _product;
         public Product.Product Product
-        { 
+        {
             get => _product;
             set => SetPropertyValue(nameof(Product), ref _product, value);
         }
@@ -29,16 +31,13 @@ namespace MyTest.Module.BusinessObjects.Production
             set => SetPropertyValue(nameof(SubNumberProductionOrder), ref _subNumberProductionOrder, value);
         }
 
-    
-          private ProductionOrder _productionOrders;
-        [Association("ProductionOrder-ProductionOrderItem")]
-        public ProductionOrder ProductionOrders
+
+        ProductionOrder _ProductionOrder;
+        [Association]
+        public ProductionOrder ProductionOrder
         {
-            get { return _productionOrders; }
-            set
-            {
-                SetPropertyValue("ProductionOrders", ref _productionOrders, value);
-            }
+            get => _ProductionOrder;
+            set => SetPropertyValue(nameof(ProductionOrder), ref _ProductionOrder, value);
         }
     }
 }

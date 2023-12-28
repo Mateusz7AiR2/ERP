@@ -71,13 +71,7 @@ namespace MyTest.Module.BusinessObjects.Production
             set { SetPropertyValue(nameof(NameProductionOrder), ref _nameProductionOrder, value); }
         }
 
-        [Association("ProductionOrder-ProductionOrderItem")]
-        public XPCollection<ProductionOrderItem> ProductionOrderItems
-        {
-            get
-            {
-                return GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
-            }
-        }
+        [Association]
+        public XPCollection<ProductionOrderItem> ProductionOrderItems => GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
     }
 }
