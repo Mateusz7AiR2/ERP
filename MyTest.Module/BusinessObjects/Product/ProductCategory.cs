@@ -27,6 +27,14 @@ namespace MyTest.Module.BusinessObjects.Product
             }
         }
 
+        [Association("ProductCategory-Elements")]
+        public XPCollection<Elements> Elements
+        {
+            get
+            {
+                return GetCollection<Elements>(nameof(Elements));
+            }
+        }
 
 
     }

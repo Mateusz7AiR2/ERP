@@ -32,8 +32,8 @@ namespace MyTest.Module.BusinessObjects.Production
     
           private ProductionOrder _productionOrders;
         [Association("ProductionOrder-ProductionOrderItem")]
-       public ProductionOrder ProductionOrders
-       {
+        public ProductionOrder ProductionOrders
+        {
             get { return _productionOrders; }
             set
             {

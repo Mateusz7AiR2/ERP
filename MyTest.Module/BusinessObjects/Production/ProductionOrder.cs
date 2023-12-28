@@ -5,6 +5,7 @@ using DevExpress.Xpo;
 using MyTest.Module.BusinessObjects.Core;
 using MyTest.Module.BusinessObjects.CRM;
 using MyTest.Module.BusinessObjects.Enum;
+using MyTest.Module.BusinessObjects.Product;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,5 @@ namespace MyTest.Module.BusinessObjects.Production
                 return GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
             }
         }
-
     }
 }

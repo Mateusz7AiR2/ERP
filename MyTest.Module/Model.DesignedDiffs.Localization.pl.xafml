@@ -121,8 +121,19 @@
     <DetailView Id="ProductCategory_DetailView">
       <Layout>
         <LayoutGroup Id="Main">
+          <TabbedGroup Id="Item2">
+            <LayoutGroup Id="Item1" Caption="Kategoria wyrobu">
+              <LayoutGroup Id="Auto1b72bb53-192e-4101-95af-332ff91ac417" Caption="Auto1b72bb53-192e-4101-95af-332ff91ac417(4)" />
+              <LayoutGroup Id="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a" Caption="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a(7)" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item3" Caption="Elementy maszyny">
+              <LayoutGroup Id="Elements_Group" Caption="Elements" />
+            </LayoutGroup>
+          </TabbedGroup>
           <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="SteelCategory" Caption="Rodzaj materiału" />
             <LayoutGroup Id="XPObject" Caption="Oid" />
+            <LayoutGroup Id="ProductCategory" Caption="Rodzaj" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>

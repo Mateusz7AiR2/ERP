@@ -85,6 +85,7 @@
     <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Elements_ListView" AllowEdit="False" />
     <DetailView Id="Entity_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -220,24 +221,44 @@
       </Columns>
     </ListView>
     <DetailView Id="ProductCategory_DetailView">
+      <Items>
+        <PropertyEditor Id="SteelsCategory" AllowEdit="False" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="ProductCategory" RelativeSize="5.698005698005698">
-              <LayoutItem Id="ProductCategoryName" RelativeSize="100" />
+          <TabbedGroup Id="Item2" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+              <LayoutGroup Id="Auto1b72bb53-192e-4101-95af-332ff91ac417" ShowCaption="False" Index="0" RelativeSize="49.644381223328594" IsNewNode="True">
+                <LayoutItem Id="ProductCategoryName" ViewItem="ProductCategoryName" Index="0" RelativeSize="6.679764243614931" IsNewNode="True" />
+                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="1" RelativeSize="93.32023575638507" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto1ee3835b-a8d3-4f0b-9857-c1371781937a" ShowCaption="False" Index="1" RelativeSize="50.355618776671406" IsNewNode="True">
+                <LayoutItem Id="SteelsCategory" ViewItem="SteelsCategory" Index="0" RelativeSize="6.679764243614931" IsNewNode="True" />
+                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="93.32023575638507" IsNewNode="True" />
+              </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="SteelCategory" RelativeSize="4.843304843304844">
-              <LayoutItem Id="SteelsCategory" RelativeSize="100" />
+            <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Elements_Group" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Elements" ViewItem="Elements" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="XPObject" Index="2" RelativeSize="89.45868945868946" Direction="Horizontal">
-              <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="0" RelativeSize="49.94475138121547" IsNewNode="True" />
+          </TabbedGroup>
+          <LayoutGroup Id="Elements_Group" Removed="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Removed="True">
+            <LayoutGroup Id="SteelCategory" RelativeSize="17.94871794871795" Index="0">
+              <LayoutItem Id="SteelsCategory" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Index="1" RelativeSize="82.05128205128206" Direction="Horizontal">
               <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="5.882352941176471" Removed="True" />
-              <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="1" RelativeSize="50.05524861878453" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ProductCategory" RelativeSize="77.93594306049822" Removed="True">
+              <LayoutItem Id="ProductCategoryName" RelativeSize="100" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="ProductCategory_Elements_ListView" AllowEdit="True" />
     <DetailView Id="ProductionOrder_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
