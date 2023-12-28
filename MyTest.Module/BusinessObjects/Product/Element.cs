@@ -28,6 +28,12 @@ namespace MyTest.Module.BusinessObjects.Product
                 SetPropertyValue(nameof(ElementName), ref _elementName, value);
             }
         }
+        bool _Completed;
+        public bool Completed
+        {
+            get => _Completed;
+            set => SetPropertyValue(nameof(Completed), ref _Completed, value);
+        }
 
         ProductionTaskItem _ProductionTaskItem;
         [Association]
