@@ -78,6 +78,7 @@
     </Items>
   </NavigationItems>
   <Views>
+    <DetailView Id="ChronologyTaskItem_DetailView" CaptionColon=":" RequiredFieldMark="*" />
     <DetailView Id="Entity_DetailView">
       <Layout>
         <LayoutGroup Id="Main">

@@ -82,6 +82,34 @@
     <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <DetailView Id="ChronologyTaskItem_DetailView" EnableCaptionColon="True" CaptionLocation="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" CaptionWordWrap="Default" EnableLayoutGroupImages="True" CustomizationEnabled="True" ClassName="MyTest.Module.BusinessObjects.Production.ProductionTaskItem" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="ChronologyItem" PropertyName="ChronologyItem" IsNewNode="True" />
+        <PropertyEditor Id="CreatedOn" PropertyName="CreatedOn" IsNewNode="True" />
+        <PropertyEditor Id="Elements" PropertyName="Elements" View="ChronologyTaskItem_Elements_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Index" PropertyName="Index" IsNewNode="True" />
+        <PropertyEditor Id="ObjectCode" PropertyName="ObjectCode" IsNewNode="True" />
+        <PropertyEditor Id="Oid" PropertyName="Oid" IsNewNode="True" />
+        <PropertyEditor Id="ProductionTask" PropertyName="ProductionTask" IsNewNode="True" />
+        <PropertyEditor Id="ProductionTaskKind" PropertyName="ProductionTaskKind" IsNewNode="True" />
+        <PropertyEditor Id="Progres" PropertyName="Progres" IsNewNode="True" />
+        <PropertyEditor Id="UpdatedOn" PropertyName="UpdatedOn" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutItem Id="Elements" ViewItem="Elements" Index="0" RelativeSize="100" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+    <ListView Id="ChronologyTaskItem_Elements_ListView" ClassName="MyTest.Module.BusinessObjects.Product.Element" DataAccessMode="Client" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Completed" PropertyName="Completed" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="CreatedOn" PropertyName="CreatedOn" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="ObjectCode" PropertyName="ObjectCode" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="ProductionTaskItem" PropertyName="ProductionTaskItem" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="UpdatedOn" PropertyName="UpdatedOn" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="ElementName" PropertyName="ElementName" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="Entity_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
@@ -216,7 +244,7 @@
         <ColumnInfo Id="Linework" Index="3" />
       </Columns>
     </ListView>
-    <ListView Id="ProductCategory_ChronologyItems_ListView" MasterDetailMode="ListViewAndDetailView" AllowEdit="True">
+    <ListView Id="ProductCategory_ChronologyItems_ListView" MasterDetailMode="ListViewAndDetailView" AllowEdit="True" MasterDetailView="ChronologyTaskItem_DetailView">
       <Columns>
         <ColumnInfo Id="ProductionTask" Index="-1" />
         <ColumnInfo Id="Progres" Index="2" />
