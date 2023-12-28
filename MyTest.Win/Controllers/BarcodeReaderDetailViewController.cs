@@ -16,7 +16,7 @@ using System.Text;
 
 namespace MyTest.Win.Controllers
 {
-    public partial class BarcodeReaderDetailViewController : ViewController<DetailView>
+    public partial class BarcodeReaderDetailViewController : ViewController<ListView>
     {
         private readonly List<SerialPort> serials = new();
         ElementToProductionTask current = null;
@@ -24,9 +24,7 @@ namespace MyTest.Win.Controllers
         IObjectSpace unsecuredObjectSpace;
         ProductionTask task;
         public BarcodeReaderDetailViewController()
-        {
-            TargetViewId = "ProductionTask_DetailView";
-        }
+        { }
 
         protected override void OnActivated()
         {
