@@ -58,7 +58,6 @@
         <Member Name="PlannedFinishDate" Caption="Planowana data ukończenia" />
         <Member Name="Priority" Caption="Priorytet" />
         <Member Name="ProductionState" Caption="Stan zlecenia" />
-        <Member Name="Products" Caption="Wyrób" />
         <Member Name="ProjectManager" Caption="Odpowiedzialny za projekt" />
       </OwnMembers>
     </Class>
@@ -68,6 +67,21 @@
       </OwnMembers>
     </Class>
   </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Product" Caption="Wyroby">
+        <Items>
+          <Item Id="Kategoria wyrobu">
+            <Items>
+              <Item Id="Product Category" Caption="Kategoria " />
+            </Items>
+          </Item>
+          <Item Id="Product" Caption="Wyrób" />
+        </Items>
+      </Item>
+      <Item Id="Production" Caption="Produkcja" />
+    </Items>
+  </NavigationItems>
   <Views>
     <DetailView Id="Entity_DetailView">
       <Layout>
@@ -119,9 +133,7 @@
           <LayoutGroup Id="SimpleEditors">
             <TabbedGroup Id="Item1">
               <LayoutGroup Id="ProductionOrder" Caption="Zlecenie produkcyjne" />
-              <LayoutGroup Id="Item4" Caption="Wyrób">
-                <LayoutGroup Id="Products" Caption="Wyrób" />
-              </LayoutGroup>
+              <LayoutGroup Id="Item4" Caption="Wyrób" />
             </TabbedGroup>
             <LayoutGroup Id="ProductionOrder" Caption="Production Order">
               <LayoutGroup Id="Item2" Caption="Wyroby">

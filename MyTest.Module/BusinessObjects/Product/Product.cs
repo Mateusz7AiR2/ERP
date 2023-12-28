@@ -79,15 +79,5 @@ namespace MyTest.Module.BusinessObjects.Product
 
 
         }
-        private ProductionOrder _productionOrders;
-        [Association("ProductionOrder-Products")]
-        public ProductionOrder  ProductionOrders
-        {
-            get { return _productionOrders; }
-            set
-            {
-                SetPropertyValue("ProductionOrders", ref _productionOrders, value);
-            }
-        }
     }
 }

@@ -70,14 +70,12 @@ namespace MyTest.Module.BusinessObjects.Production
             set { SetPropertyValue(nameof(NameProductionOrder), ref _nameProductionOrder, value); }
         }
 
-        [Association("ProductionOrder-Products")]
-        //[LookupEditorMode(typeof(Product))]
-        //public XPCollection<MyTest.Module.BusinessObjects.Product.Product> Products => GetCollection<MyTest.Module.BusinessObjects.Product.Product>("Products");
-        public XPCollection<Product.Product> Products
+        [Association("ProductionOrder-ProductionOrderItem")]
+        public XPCollection<ProductionOrderItem> ProductionOrderItems
         {
             get
             {
-                return GetCollection<Product.Product>(nameof(Products));
+                return GetCollection<ProductionOrderItem>(nameof(ProductionOrderItems));
             }
         }
 

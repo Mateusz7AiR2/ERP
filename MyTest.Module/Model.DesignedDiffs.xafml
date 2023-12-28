@@ -54,30 +54,26 @@
   </Localization>
   <NavigationItems NavigationStyle="Accordion" DefaultParentImageName="" DefaultLeafImageName="">
     <Items>
-      <Item Id="CRM" ImageName="" IsNewNode="True">
+      <Item Id="CRM" ImageName="" Index="10" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Entity" ViewId="Entity_ListView" ImageName="BO_Unknow" IsNewNode="True" />
           <Item Id="Perosn" ViewId="Person_ListView" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Enum" IsNewNode="True">
+      <Item Id="Product" ViewId="" Index="20" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="SteelType" ViewId="SteelCategory_ListView" IsNewNode="True" />
-        </Items>
-      </Item>
-      <Item Id="Product" ViewId="" IsNewNode="True">
-        <Items IsNewNode="True">
+          <Item Id="Kategoria wyrobu" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Product Category" ViewId="ProductCategory_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
           <Item Id="Product" ViewId="Product_ListView" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Product Category" ViewId="" Caption="Product Category" IsNewNode="True">
-        <Items IsNewNode="True">
-          <Item Id="Product Category" ViewId="ProductCategory_ListView" IsNewNode="True" />
-        </Items>
-      </Item>
-      <Item Id="Production" IsNewNode="True">
+      <Item Id="Production" Index="30" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="ProductionOrder" ViewId="ProductionOrder_ListView" IsNewNode="True" />
+          <Item Id="Rodzaj operacji" ViewId="ProductionTaskKind_ListView" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -205,7 +201,6 @@
                 <LayoutItem Id="Linework" RelativeSize="21.666666666666668" />
                 <LayoutItem Id="ObjectCode" ViewItem="ObjectCode" Index="2" RelativeSize="21.666666666666668" IsNewNode="True" />
                 <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="3" RelativeSize="28.333333333333332" IsNewNode="True" />
-                <LayoutItem Id="ProductionOrders" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
             <LayoutGroup Id="XPObject" Index="1" RelativeSize="71.88612099644128">
@@ -219,7 +214,6 @@
     <ListView Id="Product_ListView">
       <Columns>
         <ColumnInfo Id="Description" Index="-1" />
-        <ColumnInfo Id="ProductionOrders" Index="-1" />
         <ColumnInfo Id="ProductCategory" Index="1" />
         <ColumnInfo Id="SteelCategory" Index="2" />
         <ColumnInfo Id="Linework" Index="3" />
@@ -248,23 +242,21 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="27.635327635327634" IsNewNode="True">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
               <LayoutGroup Id="ProductionOrder" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutGroup Id="ProductionOrder_col1" ShowCaption="False" Index="0" RelativeSize="48.009101251422074" IsNewNode="True">
-                  <LayoutItem Id="Entity" ViewItem="Entity" Index="0" RelativeSize="24.324324324324323" IsNewNode="True" />
-                  <LayoutItem Id="ProjectManager" ViewItem="ProjectManager" Index="1" RelativeSize="17.56756756756757" IsNewNode="True" />
-                  <LayoutItem Id="Priority" ViewItem="Priority" Index="2" RelativeSize="58.108108108108105" IsNewNode="True" />
+                <LayoutGroup Id="ProductionOrder_col1" ShowCaption="False" Index="0" RelativeSize="47.863247863247864" IsNewNode="True">
+                  <LayoutItem Id="Entity" ViewItem="Entity" Index="0" RelativeSize="6.666666666666667" IsNewNode="True" />
+                  <LayoutItem Id="ProjectManager" ViewItem="ProjectManager" Index="1" RelativeSize="5.098039215686274" IsNewNode="True" />
+                  <LayoutItem Id="Priority" ViewItem="Priority" Index="2" RelativeSize="88.23529411764706" IsNewNode="True" />
                 </LayoutGroup>
-                <LayoutGroup Id="ProductionOrder_col2" ShowCaption="False" Index="1" RelativeSize="51.990898748577926" IsNewNode="True">
-                  <LayoutItem Id="PlannedFinishDate" ViewItem="PlannedFinishDate" Index="0" RelativeSize="24.324324324324323" IsNewNode="True" />
-                  <LayoutItem Id="ProductionState" ViewItem="ProductionState" Index="1" RelativeSize="17.56756756756757" IsNewNode="True" />
-                  <LayoutItem Id="NameProductionOrder" ViewItem="NameProductionOrder" Index="2" RelativeSize="58.108108108108105" IsNewNode="True" />
+                <LayoutGroup Id="ProductionOrder_col2" ShowCaption="False" Index="1" RelativeSize="52.136752136752136" IsNewNode="True">
+                  <LayoutItem Id="PlannedFinishDate" ViewItem="PlannedFinishDate" Index="0" RelativeSize="6.666666666666667" IsNewNode="True" />
+                  <LayoutItem Id="ProductionState" ViewItem="ProductionState" Index="1" RelativeSize="5.098039215686274" IsNewNode="True" />
+                  <LayoutItem Id="NameProductionOrder" ViewItem="NameProductionOrder" Index="2" RelativeSize="88.23529411764706" IsNewNode="True" />
                 </LayoutGroup>
               </LayoutGroup>
               <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
-                <LayoutGroup Id="Products" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
-                  <LayoutItem Id="Products" ViewItem="Products" Index="0" RelativeSize="100" IsNewNode="True" />
-                </LayoutGroup>
+                <LayoutItem Id="ProductionOrderItems" ViewItem="ProductionOrderItems" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
             </TabbedGroup>
             <LayoutGroup Id="ProductionOrder" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="40.0355871886121" Removed="True">
@@ -284,8 +276,7 @@
                 <LayoutItem Id="NameProductionOrder" ViewItem="NameProductionOrder" Index="2" RelativeSize="67.9144385026738" IsNewNode="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="XPObject" Index="1" RelativeSize="72.36467236467236">
-              <LayoutItem Id="Item3" Index="0" RelativeSize="100" IsNewNode="True" />
+            <LayoutGroup Id="XPObject" Index="1" RelativeSize="75.44483985765125" Removed="True">
               <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
@@ -302,14 +293,6 @@
       <Columns>
         <ColumnInfo Id="PlannedFinishDate" Index="2" />
         <ColumnInfo Id="Priority" Index="3" />
-      </Columns>
-    </ListView>
-    <ListView Id="ProductionOrder_Products_ListView">
-      <Columns>
-        <ColumnInfo Id="Description" Index="-1" />
-        <ColumnInfo Id="ProductCategory" Index="1" />
-        <ColumnInfo Id="SteelCategory" Index="2" />
-        <ColumnInfo Id="Linework" Index="3" />
       </Columns>
     </ListView>
     <DetailView Id="SteelCategory_DetailView">
